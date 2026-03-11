@@ -1,0 +1,453 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.015em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-display,
+  .text-page-title {
+    letter-spacing: -0.025em;
+  }
+
+  :root {
+    /* ══════════════════════════════════════════
+       HIREBRICKS 2.0 — Modern SaaS Design System
+       Brand: Deep Navy + Vibrant Orange
+       Aesthetic: Crisp white, ultra-clean, high-density
+       ══════════════════════════════════════════ */
+
+    --background: 220 20% 97%;
+    /* crisp cool-white: #F5F7FA */
+    --foreground: 222 47% 11%;
+    /* near-black: #1A1F36 */
+    --card: 0 0% 100%;
+    /* pure white */
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary = Deep Navy */
+    --primary: 217 60% 27%;
+    /* #1B3B6F */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary = Cool neutral */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted = Subtle grays */
+    --muted: 220 14% 95%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent = Vibrant Orange */
+    --accent: 24 95% 53%;
+    /* #F97316 — vibrant orange */
+    --accent-foreground: 0 0% 100%;
+
+    /* Semantic */
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Chrome */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 24 95% 53%;
+    /* orange ring for focus states */
+    --radius: 0.5rem;
+    /* 8px base — tighter, more professional */
+
+    /* Sidebar */
+    --sidebar-bg: 222 47% 11%;
+    /* dark navy sidebar */
+    --sidebar-foreground: 220 20% 85%;
+    --sidebar-muted: 222 30% 22%;
+    --sidebar-accent: 24 95% 53%;
+    --sidebar-border: 222 30% 18%;
+
+    /* Brand raw values */
+    --navy: 217 60% 27%;
+    --amber: 24 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv11', 'ss01';
+    /* Inter stylistic sets for cleaner forms */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Tighter table spacing globally */
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+}
+
+/* ══════════════════════════════════════════
+   DESIGN SYSTEM 2.0 — UTILITY CLASSES
+   ══════════════════════════════════════════ */
+
+@layer utilities {
+
+  /* ─── Card System (refined) ─── */
+  .glass-card {
+    @apply bg-card border border-border rounded-lg;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
+  }
+
+  .card-elevated {
+    @apply bg-card border border-border rounded-lg;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.03);
+  }
+
+  .card-interactive {
+    @apply bg-card border border-border rounded-lg transition-all duration-200 ease-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  }
+
+  .card-interactive:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+    border-color: hsl(var(--accent) / 0.25);
+  }
+
+  .stat-card {
+    @apply card-elevated p-4 flex flex-col justify-between;
+  }
+
+  .page-container {
+    @apply p-4 md:p-5 lg:p-6 max-w-[1440px] mx-auto w-full;
+  }
+
+  /* ─── Dense Data Table Styles ─── */
+  .dense-table {
+    @apply w-full text-sm;
+  }
+
+  .dense-table thead th {
+    @apply text-xs font-semibold text-muted-foreground uppercase tracking-wider py-2.5 px-3 border-b border-border bg-muted/30 text-left;
+  }
+
+  .dense-table tbody tr {
+    @apply border-b border-border/50 transition-colors duration-150;
+  }
+
+  .dense-table tbody tr:hover {
+    @apply bg-muted/20;
+  }
+
+  .dense-table tbody td {
+    @apply py-2.5 px-3 text-sm;
+  }
+
+  .dense-table tbody tr:last-child {
+    @apply border-b-0;
+  }
+
+  /* ─── Gradients ─── */
+  .gradient-navy {
+    background: linear-gradient(135deg, hsl(222 47% 11%), hsl(217 60% 20%));
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(21 90% 48%));
+  }
+
+  .gradient-brand {
+    background: linear-gradient(135deg, hsl(217 60% 27%), hsl(217 80% 22%));
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(24 95% 53% / 0.06), hsl(24 95% 53% / 0.01));
+  }
+
+  .gradient-surface {
+    background: linear-gradient(135deg, hsl(220 20% 97%), hsl(220 14% 95%));
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(21 90% 46%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-navy {
+    background: linear-gradient(135deg, hsl(217 60% 27%), hsl(217 60% 40%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ─── Typography ─── */
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-page-title {
+    @apply text-2xl font-bold tracking-tight text-foreground;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  .text-section-title {
+    @apply text-lg font-semibold text-foreground;
+  }
+
+  .text-label {
+    @apply text-xs font-semibold uppercase tracking-wider text-muted-foreground;
+  }
+
+  .text-metric {
+    @apply text-3xl font-bold tracking-tight text-foreground;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  /* ─── Modern Interactions ─── */
+  .card-hover {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  .card-hover:hover {
+    box-shadow: 0 6px 24px -6px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-scale {
+    @apply transition-all duration-150 ease-out;
+  }
+
+  .btn-scale:hover {
+    transform: scale(1.01);
+  }
+
+  .btn-scale:active {
+    transform: scale(0.98);
+  }
+
+  /* ─── Shimmer Skeleton ─── */
+  .shimmer {
+    background: linear-gradient(90deg,
+        hsl(var(--muted) / 0.4) 0%,
+        hsl(var(--muted) / 1) 50%,
+        hsl(var(--muted) / 0.4) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s ease-in-out infinite;
+  }
+
+  /* ─── Section Utilities ─── */
+  .section-wrapper {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  .section-gap {
+    @apply py-16 md:py-24;
+  }
+
+  /* ─── Scrollbar ─── */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Slim scrollbar */
+  .slim-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .slim-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .slim-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 999px;
+  }
+
+  .slim-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.3);
+  }
+
+  /* ─── Dot Grid Background ─── */
+  .dot-grid {
+    background-image: radial-gradient(hsl(217 60% 27% / 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ─── Grain Texture Overlay ─── */
+  .grain-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.02;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* ─── Status Indicators ─── */
+  .status-dot {
+    @apply w-2 h-2 rounded-full inline-block;
+  }
+
+  .status-dot-success {
+    @apply status-dot bg-success;
+  }
+
+  .status-dot-warning {
+    @apply status-dot bg-warning;
+  }
+
+  .status-dot-danger {
+    @apply status-dot bg-destructive;
+  }
+
+  .status-dot-muted {
+    @apply status-dot bg-muted-foreground/40;
+  }
+
+  /* ─── Focus Ring ─── */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+}
+
+/* ══════════════════════════════════════════
+   KEYFRAMES
+   ══════════════════════════════════════════ */
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes subtle-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
