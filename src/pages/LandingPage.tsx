@@ -594,6 +594,7 @@ const LandingPage = () => {
                 <button
                   key={i}
                   onClick={() => setActiveTestimonial(i)}
+                  aria-label={`View testimonial ${i + 1}`}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${i === activeTestimonial ? 'bg-accent w-6' : 'bg-border hover:bg-muted-foreground/30'
                     }`}
                 />

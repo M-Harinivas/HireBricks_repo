@@ -77,7 +77,7 @@ export const PublicNavbar = ({ transparentDefault = true }: PublicNavbarProps) =
                             </Link>
                         )}
                     </div>
-                    <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-foreground">
+                    <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden p-2 text-foreground" aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}>
                         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>

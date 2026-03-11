@@ -137,8 +137,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }, []);
 
     const resetPasswordForEmail = useCallback(async (email: string) => {
+        const siteUrl = import.meta.env.VITE_SITE_URL || 'https://hirebricks.com';
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
-            redirectTo: `${window.location.origin}/reset-password`,
+            redirectTo: `${siteUrl}/reset-password`,
         });
         if (error) {
             return { success: false, error: error.message };

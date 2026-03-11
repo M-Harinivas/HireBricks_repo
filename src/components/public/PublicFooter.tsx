@@ -13,10 +13,10 @@ export const PublicFooter = () => {
                             Connecting exceptional talent with forward-thinking companies. Your next great opportunity starts here.
                         </p>
                         <div className="flex gap-3 mt-6">
-                            <a href="#" className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                            <a href="#" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                                 <Instagram size={18} />
                             </a>
-                            <a href="https://www.linkedin.com/company/hirebricks/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                            <a href="https://www.linkedin.com/company/hirebricks/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn" className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                                 <Linkedin size={18} />
                             </a>
                         </div>

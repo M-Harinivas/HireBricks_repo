@@ -17,6 +17,8 @@ const About = () => {
                     <img
                         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop"
                         alt="Modern team context"
+                        width="2670"
+                        height="1780"
                         className="w-full h-full object-cover grayscale opacity-20"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
@@ -88,6 +90,8 @@ const About = () => {
                                 <img
                                     src="/images/ai_recruitment_abstract.png"
                                     alt="AI Recruitment Abstract"
+                                    width="600"
+                                    height="600"
                                     className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
                                 />
                                 {/* Overlay gradient to merge with layout */}
